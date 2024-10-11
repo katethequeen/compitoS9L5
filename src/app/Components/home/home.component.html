@@ -1,0 +1,36 @@
+<h1>Autos</h1>
+<div class="row row-cols-md-3 my-5">
+  <div class="col" *ngFor="let car of filteredCars">
+    <div class="card">
+      <a [routerLink]="['/' + car.routerLink]">
+        <img [src]="car.brandLogo" class="card-img-top" alt="brandLogo" />
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">{{ car.brand }}</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Ti consigliamo</h2>
+<div class="row row-cols-md-2 my-3">
+  <div class="col" *ngFor="let car of randomCars">
+    <div class="card">
+      <img src="{{ car.modelImage }}" class="card-img-top" alt="logo" />
+      <div
+        class="card-body"
+        [ngStyle]="
+          car.available
+            ? { 'background-color': 'green' }
+            : { 'background-color': 'red' }
+        "
+      >
+        <h5 class="card-title">{{ car.brand }}</h5>
+        <h6>{{ car.model }}</h6>
+        <a [routerLink]="['/' + car.routerLink]" class="btn btn-primary"
+          >View Brand</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

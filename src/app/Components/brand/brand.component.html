@@ -1,0 +1,13 @@
+<h1>Our Brands</h1>
+<div class="row row-cols-md-3">
+  <div class="col" *ngFor="let car of filteredCars">
+    <div class="card">
+      <a [routerLink]="['/' + car.routerLink]">
+        <img [src]="car.brandLogo" class="card-img-top" alt="brandLogo" />
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">{{ car.brand }}</h5>
+      </div>
+    </div>
+  </div>
+</div>
